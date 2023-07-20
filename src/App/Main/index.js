@@ -36,11 +36,7 @@ const Main = () => {
   };
 
   const { status, data } = useQuery(["countries"], fetchData);
-
-  if (data) {
-    console.log(data);
-  }
-
+  
   return (
     <StyledMain>
       <Wrapper>
