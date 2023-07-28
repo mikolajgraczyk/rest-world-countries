@@ -1,9 +1,10 @@
-import { StyledCountryTile } from "./styled";
+import { StyledCountryTile, Name } from "./styled";
 
 const CountryTile = ({ element }) => {
+    
     return(
         <StyledCountryTile>
-            {element.name.official}
+            <Name>{element.name.common}</Name>
         </StyledCountryTile>
     );
 };

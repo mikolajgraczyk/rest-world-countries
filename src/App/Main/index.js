@@ -16,6 +16,18 @@ const Main = () => {
     () => fetchData(query, selectedContinent)
   );
 
+  const showCountries = () => {
+    if (query && selectedContinent) {
+      const queryAtContinent = data.filter((element) =>
+        element.name.official.toLowerCase().includes(query.toLowerCase())
+      );
+
+      return queryAtContinent;
+    }
+
+    return data;
+  };
+
   return (
     <StyledMain>
       <Wrapper>
@@ -25,7 +37,7 @@ const Main = () => {
           searchParams={searchParams}
           setSearchParams={setSearchParams}
         />
-        <BottomMainSection status={status} data={data}/>
+        <BottomMainSection status={status} showCountries={showCountries} />
       </Wrapper>
     </StyledMain>
   );

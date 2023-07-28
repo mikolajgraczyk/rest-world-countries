@@ -3,6 +3,7 @@ import Main from "./Main";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import { useState } from "react";
+import { GlobalStyle } from "./GlobalStyle";
 
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
@@ -13,6 +14,7 @@ function App() {
 
   return (
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+      <GlobalStyle />
       <>
         <Header switchTheme={switchTheme} />
         <Main />

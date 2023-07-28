@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledMain = styled.main`
-  background: ${({ theme }) => theme.color.primary};
   transition: 0.3s;
 `;
 

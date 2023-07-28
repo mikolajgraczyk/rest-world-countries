@@ -18,7 +18,7 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
   return (
     <>
       <ContinentSelectButton onClick={expandList}>
-        <Text>Filter by Region</Text>
+        <Text>{selectedContinent ? selectedContinent : "Filter by Region"}</Text>
         <StyledSelectIcon />
       </ContinentSelectButton>
       {isListVisible ? (
@@ -26,9 +26,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
           <ListElement>
             <ListElementButton
               onClick={() =>
-                selectedContinent === "africa"
+                selectedContinent === "Africa"
                   ? setSelectedContinent(null)
-                  : setSelectedContinent("africa")
+                  : setSelectedContinent("Africa")
               }
             >
               Africa
@@ -37,9 +37,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
           <ListElement>
             <ListElementButton
               onClick={() =>
-                selectedContinent === "america"
+                selectedContinent === "America"
                   ? setSelectedContinent(null)
-                  : setSelectedContinent("america")
+                  : setSelectedContinent("America")
               }
             >
               America
@@ -48,9 +48,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
           <ListElement>
             <ListElementButton
               onClick={() =>
-                selectedContinent === "asia"
+                selectedContinent === "Asia"
                   ? setSelectedContinent(null)
-                  : setSelectedContinent("asia")
+                  : setSelectedContinent("Asia")
               }
             >
               Asia
@@ -59,9 +59,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
           <ListElement>
             <ListElementButton
               onClick={() =>
-                selectedContinent === "europe"
+                selectedContinent === "Europe"
                   ? setSelectedContinent(null)
-                  : setSelectedContinent("europe")
+                  : setSelectedContinent("Europe")
               }
             >
               Europe
@@ -70,9 +70,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
           <ListElement>
             <ListElementButton
               onClick={() =>
-                selectedContinent === "oceania"
+                selectedContinent === "Oceania"
                   ? setSelectedContinent(null)
-                  : setSelectedContinent("oceania")
+                  : setSelectedContinent("Oceania")
               }
             >
               Oceania

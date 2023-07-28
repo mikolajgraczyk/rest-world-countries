@@ -13,8 +13,5 @@ export const fetchData = (countryName, selectedContinent) => {
     path = `region/${selectedContinent}`;
   }
 
-  return axios
-    .get(`${baseURL}/${path}`)
-    .then((response) => response.data)
-    .catch((error) => new Error(error));
+  return axios.get(`${baseURL}/${path}`).then((response) => response.data);
 };

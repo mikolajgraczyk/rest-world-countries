@@ -2,16 +2,18 @@ import { nanoid } from "nanoid";
 import CountryTile from "./CountryTile";
 import { StyledBottomMainSection } from "./styled";
 
-const BottomMainSection = ({ status, data }) => {
+const BottomMainSection = ({ status, showCountries }) => {
   return (
     <StyledBottomMainSection>
-      {status === "loading" ? "ładowanie" : ""}
-      {status === "error" ? "Błąd" : ""}
+      {status === "loading" ? "Loading" : ""}
+      {status === "error" ? "Country not found" : ""}
       {status === "success" ? (
         <>
-          {data.map((element) => {
-            return <CountryTile key={nanoid()} element={element} />;
-          })}
+          {showCountries().length < 1
+            ? "Country not found"
+            : showCountries().map((element) => {
+                return <CountryTile key={nanoid()} element={element} />;
+              })}
         </>
       ) : (
         ""
