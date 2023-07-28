@@ -4,6 +4,7 @@ import App from "./App/App";
 import reportWebVitals from "./reportWebVitals";
 import { GlobalStyle } from "./App/GlobalStyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -17,6 +18,7 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <QueryClientProvider client={queryClient}>
     <GlobalStyle />
+    <ReactQueryDevtools />
     <App />
   </QueryClientProvider>
 );

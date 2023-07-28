@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { nanoid } from "nanoid";
+import axios from "axios";
 import CountryTile from "./CountryTile";
 import {
   StyledMain,
@@ -24,19 +25,18 @@ const Main = () => {
     setIsListVisible((prevState) => !prevState);
   };
 
-  const fetchData = async () => {
-    const response = await fetch("https://restcountries.com/v3.1/all");
-
-    if (!response.ok) {
-      new Error(response.statusText);
-      return;
-    }
-
-    return await response.json();
+  const fetchData = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        axios.get("https://restcountries.com/v3.1/all")
+          .then((response) => resolve(response.data))
+          .catch((error) => reject(new Error(error)));
+      }, 1000);
+    });
   };
 
   const { status, data } = useQuery(["countries"], fetchData);
-  
+
   return (
     <StyledMain>
       <Wrapper>
@@ -75,9 +75,7 @@ const Main = () => {
         {status === "success" ? (
           <>
             {data.map((element) => {
-              return(
-                <div key={nanoid()}>{element.name.official}</div>
-              );
+              return <div key={nanoid()}>{element.name.official}</div>;
             })}
           </>
         ) : (
