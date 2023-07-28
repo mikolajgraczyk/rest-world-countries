@@ -4,12 +4,14 @@ import App from "./App/App";
 import reportWebVitals from "./reportWebVitals";
 import { GlobalStyle } from "./App/GlobalStyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { HashRouter } from "react-router-dom";
 
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
       refetchOnWindowFocus: false,
+      retry: false,
     },
   },
 });
@@ -19,7 +21,9 @@ root.render(
   <QueryClientProvider client={queryClient}>
     <GlobalStyle />
     <ReactQueryDevtools />
-    <App />
+    <HashRouter>
+      <App />
+    </HashRouter>
   </QueryClientProvider>
 );
 
