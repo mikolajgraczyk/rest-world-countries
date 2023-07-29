@@ -1,8 +1,12 @@
+import { useContext } from "react";
+import { MainContext } from "..";
 import { nanoid } from "nanoid";
 import CountryTile from "./CountryTile";
 import { StyledBottomMainSection } from "./styled";
 
-const BottomMainSection = ({ status, showCountries }) => {
+const BottomMainSection = () => {
+  const { status, showCountries } = useContext(MainContext);
+
   return (
     <StyledBottomMainSection>
       {status === "loading" ? "Loading" : ""}
@@ -12,7 +16,12 @@ const BottomMainSection = ({ status, showCountries }) => {
           {showCountries().length < 1
             ? "Country not found"
             : showCountries().map((element) => {
-                return <CountryTile key={nanoid()} element={element} />;
+                return (
+                  <CountryTile
+                    key={nanoid()}
+                    element={element}
+                  />
+                );
               })}
         </>
       ) : (

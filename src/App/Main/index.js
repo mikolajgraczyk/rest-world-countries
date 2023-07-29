@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchData } from "./fetchData";
 import TopMainSection from "./TopMainSection";
@@ -6,40 +6,49 @@ import BottomMainSection from "./BottomMainSection";
 import { useSearchParams } from "react-router-dom";
 import { StyledMain, Wrapper } from "./styled";
 
+export const MainContext = createContext();
+
 const Main = () => {
   const [selectedContinent, setSelectedContinent] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get("search");
 
-  const { status, data } = useQuery(
-    ["countries", query, selectedContinent],
-    () => fetchData(query, selectedContinent)
+  const { status, data, isPreviousData } = useQuery(["countries", query], () =>
+    fetchData(query)
   );
 
   const showCountries = () => {
-    if (query && selectedContinent) {
-      const queryAtContinent = data.filter((element) =>
-        element.name.official.toLowerCase().includes(query.toLowerCase())
-      );
+    let countryList = data;
 
-      return queryAtContinent;
+    if (selectedContinent) {
+      countryList = data.filter((country) =>
+        country.region.toLowerCase().includes(selectedContinent.toLowerCase())
+      );
     }
 
-    return data;
+    return countryList;
   };
 
   return (
-    <StyledMain>
-      <Wrapper>
-        <TopMainSection
-          selectedContinent={selectedContinent}
-          setSelectedContinent={setSelectedContinent}
-          searchParams={searchParams}
-          setSearchParams={setSearchParams}
-        />
-        <BottomMainSection status={status} showCountries={showCountries} />
-      </Wrapper>
-    </StyledMain>
+    <MainContext.Provider
+      value={{
+        selectedContinent,
+        setSelectedContinent,
+        searchParams,
+        setSearchParams,
+        status,
+        query,
+        showCountries,
+        isPreviousData,
+      }}
+    >
+      <StyledMain>
+        <Wrapper>
+          <TopMainSection />
+          <BottomMainSection />
+        </Wrapper>
+      </StyledMain>
+    </MainContext.Provider>
   );
 };
 

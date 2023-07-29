@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MainContext } from "..";
 import ContinentsButton from "./ContinentsButton";
 import {
   StyledTopMainSection,
@@ -7,13 +8,10 @@ import {
   Input,
 } from "./styled";
 
-const TopMainSection = ({
-  selectedContinent,
-  setSelectedContinent,
-  searchParams,
-  setSearchParams,
-}) => {
+const TopMainSection = () => {
   const [inputValue, setInputValue] = useState("");
+
+  const { searchParams, setSearchParams, query } = useContext(MainContext); 
 
   const onInputChange = ({ target }) => {
     if (target.value.trim() === "") {
@@ -38,10 +36,7 @@ const TopMainSection = ({
           onChange={onInputChange}
         />
       </InputBar>
-      <ContinentsButton
-        selectedContinent={selectedContinent}
-        setSelectedContinent={setSelectedContinent}
-      />
+      <ContinentsButton/>
     </StyledTopMainSection>
   );
 };

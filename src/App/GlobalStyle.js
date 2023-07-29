@@ -12,5 +12,6 @@ export const GlobalStyle = createGlobalStyle`
   body {
     font-family: "Nunito Sans";
     background: ${({ theme }) => theme.color.primary};
+    transition: 0.3s;
   }
 `;

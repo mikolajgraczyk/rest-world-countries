@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { MainContext } from "../..";
 import {
   ContinentSelectButton,
   Text,
@@ -8,8 +9,10 @@ import {
   ListElementButton,
 } from "./styled";
 
-const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
+const ContinentsButton = () => {
   const [isListVisible, setIsListVisible] = useState(false);
+
+  const { selectedContinent, setSelectedContinent } = useContext(MainContext);
 
   const expandList = () => {
     setIsListVisible((prevState) => !prevState);
@@ -18,7 +21,9 @@ const ContinentsButton = ({selectedContinent, setSelectedContinent}) => {
   return (
     <>
       <ContinentSelectButton onClick={expandList}>
-        <Text>{selectedContinent ? selectedContinent : "Filter by Region"}</Text>
+        <Text>
+          {selectedContinent ? selectedContinent : "Filter by Region"}
+        </Text>
         <StyledSelectIcon />
       </ContinentSelectButton>
       {isListVisible ? (

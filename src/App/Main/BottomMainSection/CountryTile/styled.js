@@ -1,10 +1,17 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const StyledCountryTile = styled(NavLink)`
-  background-color: ${({theme}) => theme.color.secondary};
+  background-color: ${({ theme }) => theme.color.secondary};
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
   border-radius: 5px;
+  transition: 0.3s;
+
+  ${({ ispreviousdata }) =>
+    ispreviousdata === "true" &&
+    css`
+      opacity: 0.3;
+    `}
 
   &:link {
     color: ${({ theme }) => theme.color.text};
