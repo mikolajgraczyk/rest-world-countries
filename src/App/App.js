@@ -2,7 +2,7 @@ import { createContext } from "react";
 import Header from "./Header";
 import CountriesPage from "./CountriesPage";
 import CountryPage from "./CountryPage";
-import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import { useState } from "react";

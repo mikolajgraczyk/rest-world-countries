@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MainContext } from "../..";
+import { DataContext } from "../../../App";
 import {
   StyledLink,
   StyledCountryTile,
@@ -12,7 +12,7 @@ import {
 } from "./styled";
 
 const CountryTile = ({ element }) => {
-  const { isPreviousData } = useContext(MainContext);
+  const { isPreviousData } = useContext(DataContext);
 
   const addComasToNumber = (number) => {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
