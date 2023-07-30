@@ -23,8 +23,39 @@ export const StyledCountryTile = styled(NavLink)`
   }
 `;
 
+export const FlagSection = styled.div`
+  height: 160px;
+  width: 264px;
+`;
+
+export const FlagImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
+export const BottomTileSection = styled.div`
+  padding: 24px 24px 46px 24px;
+`;
+
 export const Name = styled.span`
   font-size: 18px;
   font-weight: 800;
   line-height: 26px;
+`;
+
+export const MoreInfoSection = styled.div`
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  font-family: "Nunito Sans";
+  gap: 8px;
+  color: ${({ theme }) => theme.color.text};
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+`;
+
+export const Info = styled.span`
+  font-weight: 600;
 `;

@@ -11,7 +11,7 @@ import {
 const TopMainSection = () => {
   const [inputValue, setInputValue] = useState("");
 
-  const { searchParams, setSearchParams, query } = useContext(MainContext); 
+  const { searchParams, setSearchParams, query } = useContext(MainContext);
 
   const onInputChange = ({ target }) => {
     if (target.value.trim() === "") {
@@ -36,7 +36,7 @@ const TopMainSection = () => {
           onChange={onInputChange}
         />
       </InputBar>
-      <ContinentsButton/>
+      <ContinentsButton />
     </StyledTopMainSection>
   );
 };
