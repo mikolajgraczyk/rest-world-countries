@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { MainContext } from "..";
 import ContinentsButton from "./ContinentsButton";
 import {
