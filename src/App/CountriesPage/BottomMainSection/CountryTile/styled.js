@@ -1,4 +1,15 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom";
+
+export const StyledLink = styled(Link)`
+  &:link{
+    text-decoration: none;
+  }
+
+  &:active {
+    text-decoration: none;
+  }
+`;
 
 export const StyledCountryTile = styled.div`
   background: ${({ theme }) => theme.color.secondary};

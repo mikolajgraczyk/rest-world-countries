@@ -13,8 +13,7 @@ export const ContinentSelectButton = styled.button`
   align-items: center;
   border: none;
   color: ${({ theme }) => theme.select.text};
-  transition: 0.3s;
-  transition: transform 0.2s;
+  transition: all 0.3s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     padding: 14px 19px 14px 24px;

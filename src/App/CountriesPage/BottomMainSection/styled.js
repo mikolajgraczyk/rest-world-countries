@@ -1,15 +1,4 @@
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
-
-export const Link = styled(NavLink)`
-  &:link{
-    text-decoration: none;
-  }
-
-  &:active {
-    text-decoration: none;
-  }
-`;
 
 export const StyledBottomMainSection = styled.main`
   display: grid;

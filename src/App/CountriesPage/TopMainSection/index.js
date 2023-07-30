@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { MainContext } from "..";
+import { DataContext } from "../../App";
 import ContinentsButton from "./ContinentsButton";
 import {
   StyledTopMainSection,
@@ -9,7 +9,7 @@ import {
 } from "./styled";
 
 const TopMainSection = () => {
-  const { searchParams, setSearchParams, query } = useContext(MainContext);
+  const { searchParams, setSearchParams, query } = useContext(DataContext);
 
   const onInputChange = ({ target }) => {
     if (target.value.trim() === "") {

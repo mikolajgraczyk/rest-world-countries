@@ -1,14 +1,16 @@
 import { useContext, useState } from "react";
 import { MainContext } from "..";
+import { DataContext } from "../../App";
 import { nanoid } from "nanoid";
 import CountryTile from "./CountryTile";
-import { StyledBottomMainSection, Link } from "./styled";
+import { StyledBottomMainSection } from "./styled";
 import Pagination from "./Pagination";
 
 const BottomMainSection = () => {
   const [pageNumber, setPageNumber] = useState(0);
 
-  const { status, showCountries } = useContext(MainContext);
+  const { status } = useContext(DataContext);
+  const { showCountries } = useContext(MainContext);
 
   const countriesList = showCountries();
 
@@ -18,20 +20,18 @@ const BottomMainSection = () => {
       {status === "error" ? "Country not found" : ""}
       {status === "success" ? (
         <>
-          <Link>
-            <StyledBottomMainSection>
-              {countriesList.length < 1
-                ? "Country not found"
-                : countriesList.map((element, index) => {
-                    if (
-                      index >= pageNumber * 16 &&
-                      index <= pageNumber * 16 + 15
-                    ) {
-                      return <CountryTile key={nanoid()} element={element} />;
-                    }
-                  })}
-            </StyledBottomMainSection>
-          </Link>
+          <StyledBottomMainSection>
+            {countriesList.length < 1
+              ? "Country not found"
+              : countriesList.map((element, index) => {
+                  if (
+                    index >= pageNumber * 16 &&
+                    index <= pageNumber * 16 + 15
+                  ) {
+                    return <CountryTile key={nanoid()} element={element} />;
+                  }
+                })}
+          </StyledBottomMainSection>
           <Pagination
             countriesList={countriesList}
             setPageNumber={setPageNumber}

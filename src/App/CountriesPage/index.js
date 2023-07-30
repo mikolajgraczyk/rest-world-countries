@@ -1,21 +1,16 @@
 import { useState, createContext } from "react";
-import { useQuery } from "@tanstack/react-query";
-import { fetchData } from "./fetchData";
+import { useContext } from "react";
+import { DataContext } from "../App";
 import TopMainSection from "./TopMainSection";
 import BottomMainSection from "./BottomMainSection";
-import { useSearchParams } from "react-router-dom";
 import { StyledMain, Wrapper } from "./styled";
 
 export const MainContext = createContext();
 
-const Main = () => {
+const CountriesPage = () => {
   const [selectedContinent, setSelectedContinent] = useState(null);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const query = searchParams.get("search");
 
-  const { status, data, isPreviousData } = useQuery(["countries", query], () =>
-    fetchData(query)
-  );
+  const { data } = useContext(DataContext);
 
   const showCountries = () => {
     let countryList = data;
@@ -34,12 +29,7 @@ const Main = () => {
       value={{
         selectedContinent,
         setSelectedContinent,
-        searchParams,
-        setSearchParams,
-        status,
-        query,
         showCountries,
-        isPreviousData,
       }}
     >
       <StyledMain>
@@ -52,4 +42,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default CountriesPage;
