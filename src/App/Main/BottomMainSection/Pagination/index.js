@@ -1,7 +1,15 @@
+import { useContext, useEffect } from "react";
+import { MainContext } from "../..";
 import { StyledPagination, PageButton } from "./styled";
 
 const Pagination = ({ countriesList, setPageNumber }) => {
   let buttonsArray = [];
+
+  const { selectedContinent, query } = useContext(MainContext);
+  
+  useEffect(() => {
+    setPageNumber(0);
+  }, [selectedContinent, query]);
 
   const pagesTotalNumber = Math.ceil(countriesList.length / 16);
 
@@ -10,8 +18,11 @@ const Pagination = ({ countriesList, setPageNumber }) => {
   }
 
   const pageButtonHandler = (buttonNumber) => {
-    setPageNumber(buttonNumber - 1 );
-    window.scrollTo(0, 0);
+    setPageNumber(buttonNumber - 1);
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   return (
