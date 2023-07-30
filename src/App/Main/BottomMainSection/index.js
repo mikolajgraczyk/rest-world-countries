@@ -14,11 +14,11 @@ const BottomMainSection = () => {
 
   return (
     <>
-      <StyledBottomMainSection>
-        {status === "loading" ? "Loading" : ""}
-        {status === "error" ? "Country not found" : ""}
-        {status === "success" ? (
-          <>
+      {status === "loading" ? "Loading" : ""}
+      {status === "error" ? "Country not found" : ""}
+      {status === "success" ? (
+        <>
+          <StyledBottomMainSection>
             {countriesList.length < 1
               ? "Country not found"
               : countriesList.map((element, index) => {
@@ -29,12 +29,15 @@ const BottomMainSection = () => {
                     return <CountryTile key={nanoid()} element={element} />;
                   }
                 })}
-          </>
-        ) : (
-          ""
-        )}
-      </StyledBottomMainSection>
-      <Pagination countriesList={countriesList} setPageNumber={setPageNumber} />
+          </StyledBottomMainSection>
+          <Pagination
+            countriesList={countriesList}
+            setPageNumber={setPageNumber}
+          />
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
 };
