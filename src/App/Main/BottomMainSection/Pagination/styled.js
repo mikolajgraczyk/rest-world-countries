@@ -14,6 +14,26 @@ export const StyledPagination = styled.div`
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+      width: 20px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: ${({theme}) => theme.color.secondary};
+      border-radius: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: ${({theme}) => theme.color.primary};
+      border-radius: 20px;
+      border: 6px solid transparent;
+      background-clip: content-box;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: #a8bbbf;
+    }
   }
 `;
 
@@ -32,7 +52,9 @@ export const PageButton = styled.button`
     cursor: pointer;
   }
 
-  ${({ispageactive}) => ispageactive === "true" && css`
-    border: 2px lightblue solid;
-  `}
+  ${({ ispageactive }) =>
+    ispageactive === "true" &&
+    css`
+      border: 2px lightblue solid;
+    `}
 `;
