@@ -9,21 +9,17 @@ import {
 } from "./styled";
 
 const TopMainSection = () => {
-  const [inputValue, setInputValue] = useState("");
-
   const { searchParams, setSearchParams, query } = useContext(MainContext);
 
   const onInputChange = ({ target }) => {
     if (target.value.trim() === "") {
       searchParams.delete("search");
       setSearchParams(searchParams);
-      setInputValue(target.value);
 
       return;
     }
 
-    setInputValue(target.value);
-    setSearchParams({ search: target.value.trim() });
+    setSearchParams({ search: target.value });
   };
 
   return (
@@ -32,7 +28,7 @@ const TopMainSection = () => {
         <StyledInputIcon />
         <Input
           placeholder={"Search for a country…"}
-          value={inputValue}
+          value={query || ""}
           onChange={onInputChange}
         />
       </InputBar>
