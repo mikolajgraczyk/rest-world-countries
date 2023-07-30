@@ -2,11 +2,11 @@ import { useContext, useEffect } from "react";
 import { MainContext } from "../..";
 import { StyledPagination, PageButton } from "./styled";
 
-const Pagination = ({ countriesList, setPageNumber }) => {
+const Pagination = ({ countriesList, setPageNumber, pageNumber }) => {
   let buttonsArray = [];
 
   const { selectedContinent, query } = useContext(MainContext);
-  
+
   useEffect(() => {
     setPageNumber(0);
   }, [selectedContinent, query]);
@@ -25,11 +25,24 @@ const Pagination = ({ countriesList, setPageNumber }) => {
     });
   };
 
+  const isPageActive = (buttonNumber) => {
+    if (buttonNumber - 1 === pageNumber) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <StyledPagination>
       {buttonsArray.map((button) => {
+        const ispageactive = isPageActive(button);
+
         return (
-          <PageButton key={button} onClick={() => pageButtonHandler(button)}>
+          <PageButton
+            key={button}
+            onClick={() => pageButtonHandler(button)}
+            ispageactive={ispageactive ? "true" : "false"}
+          >
             {button}
           </PageButton>
         );

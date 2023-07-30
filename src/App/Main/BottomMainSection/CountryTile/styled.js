@@ -2,10 +2,11 @@ import styled, { css } from "styled-components";
 import { NavLink } from "react-router-dom";
 
 export const StyledCountryTile = styled(NavLink)`
-  background-color: ${({ theme }) => theme.color.secondary};
+  background: ${({ theme }) => theme.color.secondary};
   box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
   border-radius: 5px;
-  transition: 0.3s;
+  transition: 10s;
+  
 
   ${({ ispreviousdata }) =>
     ispreviousdata === "true" &&
@@ -54,6 +55,7 @@ export const MoreInfoSection = styled.div`
   font-size: 14px;
   font-weight: 300;
   line-height: 16px;
+  transition: 0.3s;
 `;
 
 export const Info = styled.span`

@@ -1,13 +1,20 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledPagination = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 50%;
-    margin: 0 auto;
-    margin-top: 48px;
-    gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 50%;
+  margin: 0 auto;
+  margin-top: 48px;
+  gap: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    max-width: 70%;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+  }
 `;
 
 export const PageButton = styled.button`
@@ -24,4 +31,8 @@ export const PageButton = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  ${({ispageactive}) => ispageactive === "true" && css`
+    border: 2px lightblue solid;
+  `}
 `;

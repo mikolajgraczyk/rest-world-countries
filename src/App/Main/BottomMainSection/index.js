@@ -33,6 +33,7 @@ const BottomMainSection = () => {
           <Pagination
             countriesList={countriesList}
             setPageNumber={setPageNumber}
+            pageNumber={pageNumber}
           />
         </>
       ) : (
