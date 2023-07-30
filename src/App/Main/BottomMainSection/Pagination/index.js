@@ -9,11 +9,16 @@ const Pagination = ({ countriesList, setPageNumber }) => {
     buttonsArray = [...buttonsArray, `${i + 1}`];
   }
 
+  const pageButtonHandler = (buttonNumber) => {
+    setPageNumber(buttonNumber - 1);
+    window.scrollTo(0, 0)
+  };
+
   return (
     <StyledPagination>
       {buttonsArray.map((button) => {
         return (
-          <PageButton key={button} onClick={() => setPageNumber(button - 1)}>
+          <PageButton key={button} onClick={pageButtonHandler(button)}>
             {button}
           </PageButton>
         );
