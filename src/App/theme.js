@@ -10,6 +10,7 @@ const colorNames = {
     gray: "#848484",
     ebonyClay: "#2B3844",
     mirage: "#202C36",
+    cornflower: "#6495ED",
 };
 
 export const lightTheme = {
@@ -17,6 +18,7 @@ export const lightTheme = {
         primary: colorNames.alabastersolid,
         secondary: colorNames.white,
         text: colorNames.woodsmoke,
+        active: colorNames.cornflower,
     },
     input: {
         text: colorNames.gray,
@@ -34,6 +36,7 @@ export const darkTheme = {
         primary: colorNames.mirage,
         secondary: colorNames.ebonyClay,
         text: colorNames.white,
+        active: colorNames.cornflower,
     },
     input: {
         text: colorNames.white,

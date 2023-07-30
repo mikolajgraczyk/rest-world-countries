@@ -21,5 +21,6 @@ export const StyledBottomMainSection = styled.main`
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     margin-top: 32px;
     justify-content: center;
+    padding: 0px 55px;
   }
 `;

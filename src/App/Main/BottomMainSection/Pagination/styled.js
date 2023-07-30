@@ -47,14 +47,22 @@ export const PageButton = styled.button`
   font-weight: bold;
   font-size: 14px;
   transition: 0.3s;
+  transition: transform 0.2s;
 
   &:hover {
     cursor: pointer;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 18px 0px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active{
+    transform: scale(1);
+    box-shadow: 0px 2px 9px 0px rgba(0, 0, 0, 0.05);
   }
 
   ${({ ispageactive }) =>
     ispageactive === "true" &&
     css`
-      border: 2px lightblue solid;
+      border: 2px ${({theme}) => theme.color.active} solid;
     `}
 `;

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ReactComponent as SelectIcon } from "./SelectIcon.svg";
 
 export const ContinentSelectButton = styled.button`
@@ -14,6 +14,7 @@ export const ContinentSelectButton = styled.button`
   border: none;
   color: ${({ theme }) => theme.select.text};
   transition: 0.3s;
+  transition: transform 0.2s;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     padding: 14px 19px 14px 24px;
@@ -78,5 +79,16 @@ export const ListElementButton = styled.button`
 
   &:hover {
     cursor: pointer;
+    font-size: 16px;
   }
+
+  &:active{
+    font-size: 14px;
+  }
+
+  ${({ isselected }) => isselected === "true" && css`
+    font-size: 16px;
+    font-weight: 700;
+    color: ${({theme}) => theme.color.active};
+  `}
 `;

@@ -18,6 +18,16 @@ const ContinentsButton = () => {
     setIsListVisible((prevState) => !prevState);
   };
 
+  const isSelected = (continentName) => {
+    return continentName === selectedContinent;
+  };
+
+  const continentButtonHandler = (continentName) => {
+    isSelected(continentName)
+      ? setSelectedContinent(null)
+      : setSelectedContinent(continentName);
+  };
+
   return (
     <>
       <ContinentSelectButton onClick={expandList}>
@@ -30,55 +40,40 @@ const ContinentsButton = () => {
         <ContinentsList>
           <ListElement>
             <ListElementButton
-              onClick={() =>
-                selectedContinent === "Africa"
-                  ? setSelectedContinent(null)
-                  : setSelectedContinent("Africa")
-              }
+              onClick={() => continentButtonHandler("Africa")}
+              isselected={isSelected("Africa") ? "true" : "false"}
             >
               Africa
             </ListElementButton>
           </ListElement>
           <ListElement>
             <ListElementButton
-              onClick={() =>
-                selectedContinent === "America"
-                  ? setSelectedContinent(null)
-                  : setSelectedContinent("America")
-              }
+              onClick={() => continentButtonHandler("America")}
+              isselected={isSelected("America") ? "true" : "false"}
             >
               America
             </ListElementButton>
           </ListElement>
           <ListElement>
             <ListElementButton
-              onClick={() =>
-                selectedContinent === "Asia"
-                  ? setSelectedContinent(null)
-                  : setSelectedContinent("Asia")
-              }
+              onClick={() => continentButtonHandler("Asia")}
+              isselected={isSelected("Asia") ? "true" : "false"}
             >
               Asia
             </ListElementButton>
           </ListElement>
           <ListElement>
             <ListElementButton
-              onClick={() =>
-                selectedContinent === "Europe"
-                  ? setSelectedContinent(null)
-                  : setSelectedContinent("Europe")
-              }
+              onClick={() => continentButtonHandler("Europe")}
+              isselected={isSelected("Europe") ? "true" : "false"}
             >
               Europe
             </ListElementButton>
           </ListElement>
           <ListElement>
             <ListElementButton
-              onClick={() =>
-                selectedContinent === "Oceania"
-                  ? setSelectedContinent(null)
-                  : setSelectedContinent("Oceania")
-              }
+              onClick={() => continentButtonHandler("Oceania")}
+              isselected={isSelected("Oceania") ? "true" : "false"}
             >
               Oceania
             </ListElementButton>
