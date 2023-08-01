@@ -20,7 +20,6 @@ export const FlagSection = styled.div`
   aspect-ratio: 560/401;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
-    /* max-width: 500px; */
     min-width: 0;
   }
 `;
