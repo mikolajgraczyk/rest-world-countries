@@ -1,5 +1,6 @@
 import { addComasToNumber } from "../../addComasToNumber";
 import CountryDetail from "./CountryDetail";
+import BorderCountries from "./BorderCountries";
 import {
   CountryName,
   FlagImage,
@@ -57,10 +58,13 @@ const CountryPageContent = ({ selectedCountryData }) => {
             />
             <CountryDetail
               detailName={"Languages:"}
-              detailValue={Object.values(selectedCountryData.languages)[0]}
+              detailValue={Object.values(selectedCountryData.languages).join(
+                ", "
+              )}
             />
           </div>
         </CountryDetails>
+        <BorderCountries countries={selectedCountryData.borders} />
       </InfoSection>
     </StyledCountryPageContent>
   );

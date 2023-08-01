@@ -1,5 +1,6 @@
 const breakpoint = {
-    mobileMax: 767,
+    tabletMax: 1200,
+    mobileMax: 950,
 };
 
 const colorNames = {

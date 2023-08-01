@@ -3,14 +3,13 @@ import styled from "styled-components";
 export const StyledCountryPageContent = styled.div`
   margin-top: 80px;
   display: flex;
-  gap: 100px;
+  gap: 60px;
   justify-content: space-between;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     margin-top: 64px;
     flex-direction: column;
     align-items: center;
-    gap: 44px;
   }
 `;
 
@@ -20,8 +19,8 @@ export const FlagSection = styled.div`
   min-width: 300px;
   aspect-ratio: 560/401;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    max-width: 400px;
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
+    /* max-width: 500px; */
     min-width: 0;
   }
 `;
@@ -40,8 +39,13 @@ export const InfoSection = styled.div`
   width: 100%;
   max-width: 574px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.tabletMax}px) {
     gap: 16px;
+    margin-top: 44px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    margin-top: 0;
   }
 `;
 
