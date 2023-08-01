@@ -1,6 +1,11 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
-import { StyledCountryPage, BackButton, StyledBackButtonArrow } from "./styled";
+import {
+  StyledCountryPage,
+  Wrapper,
+  BackButton,
+  StyledBackButtonArrow,
+} from "./styled";
 import { useParams, useNavigate } from "react-router-dom";
 import CountryPageContent from "./CountryPageContent";
 
@@ -21,7 +26,7 @@ const CountryPage = () => {
           <StyledBackButtonArrow />
           Back
         </BackButton>
-        <CountryPageContent selectedCountryData={selectedCountryData}/>
+        <CountryPageContent selectedCountryData={selectedCountryData[0]} />
       </StyledCountryPage>
     );
   }

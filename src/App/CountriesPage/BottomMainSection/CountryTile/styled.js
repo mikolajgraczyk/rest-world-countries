@@ -13,18 +13,18 @@ export const StyledLink = styled(Link)`
 
 export const StyledCountryTile = styled.div`
   background: ${({ theme }) => theme.color.secondary};
-  box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   border-radius: 5px;
   transition: 0.2s;
 
   &:hover{
     transform: scale(1.03);
-    box-shadow: 0px 0px 21px 2px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 0 21px 2px rgba(0, 0, 0, 0.09);
   }
 
   &:active{
     transform: scale(1);
-    box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0 7px 2px rgba(0, 0, 0, 0.03);
   }
 
   ${({ ispreviousdata }) =>
