@@ -1,13 +1,14 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
 import { StyledCountryPage, BackButton, StyledBackButtonArrow } from "./styled";
-import { useParams } from "react-router-dom";
-import { nanoid } from "nanoid";
+import { useParams, useNavigate } from "react-router-dom";
 import CountryPageContent from "./CountryPageContent";
 
 const CountryPage = () => {
   const { data, status } = useContext(DataContext);
   const { countryName } = useParams();
+
+  const navigate = useNavigate();
 
   if (status === "success") {
     const selectedCountryData = data.filter((element) => {
@@ -16,7 +17,7 @@ const CountryPage = () => {
 
     return (
       <StyledCountryPage>
-        <BackButton>
+        <BackButton onClick={() => navigate(-1)}>
           <StyledBackButtonArrow />
           Back
         </BackButton>

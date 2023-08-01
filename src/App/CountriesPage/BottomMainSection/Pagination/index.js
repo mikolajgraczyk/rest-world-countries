@@ -26,10 +26,8 @@ const Pagination = ({ countriesList, setPageNumber, pageNumber }) => {
   };
 
   const isPageActive = (buttonNumber) => {
-    if (buttonNumber - 1 === pageNumber) {
-      return true;
-    }
-    return false;
+    return buttonNumber - 1 === pageNumber;
+    
   };
 
   return (
