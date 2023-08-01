@@ -25,9 +25,9 @@ export const BorderCountryTiles = styled.div`
 `;
 
 export const BorderCountryTile = styled.div`
-  width: 96px;
-  height: 28px;
+  padding: 5px 27px;
   border-radius: 2px;
+  font-size: 14px;
   background: ${({ theme }) => theme.color.secondary};
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.1);
   font-weight: 300;
