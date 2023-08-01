@@ -16,7 +16,7 @@ export const Wrapper = styled.div`
   padding: 23px 80px 24px 81px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    padding: 16px 30px 16px 30px;
+    padding: 30px 16px 30px 16px;
   }
 `;
 
