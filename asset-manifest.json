@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.js": "/rest-world-countries/static/js/main.79ce5624.js",
+    "main.js": "/rest-world-countries/static/js/main.23f85991.js",
     "static/js/787.c6fdd02a.chunk.js": "/rest-world-countries/static/js/787.c6fdd02a.chunk.js",
     "index.html": "/rest-world-countries/index.html",
     "static/media/SwitchIcon.svg": "/rest-world-countries/static/media/SwitchIcon.cb42c7482949de0e6e38c87e300e1b1f.svg",
     "static/media/InputIcon.svg": "/rest-world-countries/static/media/InputIcon.d66ddd448f14d178e49eb26a4f771e82.svg",
     "static/media/BackButtonArrow.svg": "/rest-world-countries/static/media/BackButtonArrow.968fbd9372420160248149276bab4633.svg",
     "static/media/SelectIcon.svg": "/rest-world-countries/static/media/SelectIcon.37737fab584f4ce6a20dcea104a3c8c3.svg",
-    "main.79ce5624.js.map": "/rest-world-countries/static/js/main.79ce5624.js.map",
+    "main.23f85991.js.map": "/rest-world-countries/static/js/main.23f85991.js.map",
     "787.c6fdd02a.chunk.js.map": "/rest-world-countries/static/js/787.c6fdd02a.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.79ce5624.js"
+    "static/js/main.23f85991.js"
   ]
 }
