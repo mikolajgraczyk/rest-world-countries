@@ -64,7 +64,11 @@ const CountryPageContent = ({ selectedCountryData }) => {
             />
           </div>
         </CountryDetails>
-        <BorderCountries countries={selectedCountryData.borders} />
+        {selectedCountryData.borders ? (
+          <BorderCountries countries={selectedCountryData.borders} />
+        ) : (
+          ""
+        )}
       </InfoSection>
     </StyledCountryPageContent>
   );
