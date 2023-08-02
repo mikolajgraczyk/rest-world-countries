@@ -7,7 +7,7 @@ export const StyledCountryPage = styled.div`
   margin: 0 auto;
 
   @media (max-width: ${({theme}) => theme.breakpoint.mobileMax}px) {
-    padding: 40px 28px 0 28px;
+    padding: 40px 28px 62px 28px;
   }
 `;
 
