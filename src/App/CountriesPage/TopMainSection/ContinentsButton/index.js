@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { MainContext } from "../..";
+import { DataContext } from "../../../App";
 import {
   ContinentSelectButton,
   Text,
@@ -12,7 +12,7 @@ import {
 const ContinentsButton = () => {
   const [isListVisible, setIsListVisible] = useState(false);
 
-  const { selectedContinent, setSelectedContinent } = useContext(MainContext);
+  const { selectedContinent, setSelectedContinent } = useContext(DataContext);
 
   const expandList = () => {
     setIsListVisible((prevState) => !prevState);

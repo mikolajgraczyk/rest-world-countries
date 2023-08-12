@@ -1,16 +1,11 @@
-import { useState, createContext } from "react";
 import { useContext } from "react";
 import { DataContext } from "../App";
 import TopMainSection from "./TopMainSection";
 import BottomMainSection from "./BottomMainSection";
 import { StyledMain, Wrapper } from "./styled";
 
-export const MainContext = createContext();
-
 const CountriesPage = () => {
-  const [selectedContinent, setSelectedContinent] = useState(null);
-
-  const { data } = useContext(DataContext);
+  const { data, selectedContinent } = useContext(DataContext);
 
   const showCountries = () => {
     let countryList = data;
@@ -25,20 +20,12 @@ const CountriesPage = () => {
   };
 
   return (
-    <MainContext.Provider
-      value={{
-        selectedContinent,
-        setSelectedContinent,
-        showCountries,
-      }}
-    >
-      <StyledMain>
-        <Wrapper>
-          <TopMainSection />
-          <BottomMainSection />
-        </Wrapper>
-      </StyledMain>
-    </MainContext.Provider>
+    <StyledMain>
+      <Wrapper>
+        <TopMainSection />
+        <BottomMainSection showCountries={showCountries} />
+      </Wrapper>
+    </StyledMain>
   );
 };
 

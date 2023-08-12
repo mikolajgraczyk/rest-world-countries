@@ -20,6 +20,16 @@ export const Wrapper = styled.div`
   }
 `;
 
+export const TitleButton = styled.button`
+  border: none;
+  padding: 0;
+  background: none;
+
+  &:hover{
+    cursor: pointer;
+  }
+`;
+
 export const Title = styled.div`
   color: ${({ theme }) => theme.color.text};
   font-size: 24px;

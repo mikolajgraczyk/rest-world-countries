@@ -1,16 +1,14 @@
 import { useContext, useState } from "react";
-import { MainContext } from "..";
 import { DataContext } from "../../App";
 import { nanoid } from "nanoid";
 import CountryTile from "./CountryTile";
 import { StyledBottomMainSection } from "./styled";
 import Pagination from "./Pagination";
 
-const BottomMainSection = () => {
+const BottomMainSection = ({ showCountries }) => {
   const [pageNumber, setPageNumber] = useState(0);
 
   const { status } = useContext(DataContext);
-  const { showCountries } = useContext(MainContext);
 
   const countriesList = showCountries();
 

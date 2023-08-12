@@ -15,8 +15,4 @@ export const GlobalStyle = createGlobalStyle`
     transition: 0.3s;
     overflow-y: scroll;
   }
-
-  :root {
-  --theme-color: ${({ theme }) => theme.color.primary};
-  }
 `;

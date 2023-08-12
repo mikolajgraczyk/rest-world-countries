@@ -1,13 +1,11 @@
 import { useContext, useEffect } from "react";
-import { MainContext } from "../..";
 import { DataContext } from "../../../App";
 import { StyledPagination, PageButton } from "./styled";
 
 const Pagination = ({ countriesList, setPageNumber, pageNumber }) => {
   let buttonsArray = [];
 
-  const { selectedContinent } = useContext(MainContext);
-  const { query } = useContext(DataContext);
+  const { query, selectedContinent } = useContext(DataContext);
 
   useEffect(() => {
     setPageNumber(0);
