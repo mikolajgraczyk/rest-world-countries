@@ -1,7 +1,7 @@
 # World Countries
 
 ## Description
-The "World Countries" project is an interactive website that displays an array of information about 250 countries from around the globe. This website serves as an knowledge hub for anyone seeking to delve into the diversity and cultural richness of our planet. Through organized and accurate data, every user can uncover intriguing facts, compare differences, and delve into details concerning individual countries. User can filter countries by continents and search for them by the name. Graphics projects comes from ![Frontedn Mentor](https://www.frontendmentor.io/challenges) website.
+The "World Countries" project is an interactive website that displays an array of information about 250 countries from around the globe. This website serves as an knowledge hub for anyone seeking to delve into the diversity and cultural richness of our planet. Through organized and accurate data, every user can uncover intriguing facts, compare differences, and delve into details concerning individual countries. User can filter countries by continents and search for them by the name. Graphics projects comes from [Frontedn Mentor](https://www.frontendmentor.io/challenges) website.
 
 ## Demo
 https://mikolajgraczyk.github.io/rest-world-countries/#/countries
