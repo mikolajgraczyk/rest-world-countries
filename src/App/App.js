@@ -16,6 +16,7 @@ export const DataContext = createContext();
 function App() {
   const [isDarkTheme, setIsDarkTheme] = useState(false);
   const [selectedContinent, setSelectedContinent] = useState(null);
+  const [pageNumber, setPageNumber] = useState(0);
 
   const switchTheme = () => {
     setIsDarkTheme((prevState) => !prevState);
@@ -35,6 +36,8 @@ function App() {
         setSearchParams,
         selectedContinent,
         setSelectedContinent,
+        pageNumber,
+        setPageNumber,
         status,
         query,
         isPreviousData,

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { DataContext } from "../App";
+import { useNavigate } from "react-router-dom";
 import {
   StyledHeader,
   Wrapper,
@@ -11,13 +12,16 @@ import {
 } from "./styled";
 
 const Header = ({ switchTheme }) => {
-  const { searchParams, setSearchParams, setSelectedContinent } =
+  const { searchParams, setSearchParams, setSelectedContinent, setPageNumber } =
     useContext(DataContext);
+
+  const navigate = useNavigate();
 
   const TitleButtonHandler = () => {
     searchParams.delete("search");
     setSearchParams(searchParams);
-
+    setPageNumber(0);
+    navigate("/countries");
     setSelectedContinent(null);
   };
 

@@ -1,8 +1,7 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { DataContext } from "../App";
 import {
   StyledCountryPage,
-  Wrapper,
   BackButton,
   StyledBackButtonArrow,
 } from "./styled";
@@ -12,6 +11,10 @@ import CountryPageContent from "./CountryPageContent";
 const CountryPage = () => {
   const { data, status } = useContext(DataContext);
   const { countryName } = useParams();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const navigate = useNavigate();
 

@@ -6,9 +6,8 @@ import { StyledBottomMainSection } from "./styled";
 import Pagination from "./Pagination";
 
 const BottomMainSection = ({ showCountries }) => {
-  const [pageNumber, setPageNumber] = useState(0);
 
-  const { status } = useContext(DataContext);
+  const { status, pageNumber, setPageNumber } = useContext(DataContext);
 
   const countriesList = showCountries();
 

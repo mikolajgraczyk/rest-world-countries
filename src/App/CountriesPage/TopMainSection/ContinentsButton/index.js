@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../../App";
 import {
   ContinentSelectButton,
@@ -12,15 +12,19 @@ import {
 const ContinentsButton = () => {
   const [isListVisible, setIsListVisible] = useState(false);
 
-  const { selectedContinent, setSelectedContinent } = useContext(DataContext);
-
-  const expandList = () => {
+  const switchListState = () => {
     setIsListVisible((prevState) => !prevState);
   };
+
+  const { selectedContinent, setSelectedContinent } = useContext(DataContext);
 
   const isSelected = (continentName) => {
     return continentName === selectedContinent;
   };
+
+  useEffect(() => {
+    setIsListVisible(false);
+  }, [selectedContinent]);
 
   const continentButtonHandler = (continentName) => {
     isSelected(continentName)
@@ -30,13 +34,13 @@ const ContinentsButton = () => {
 
   return (
     <>
-      <ContinentSelectButton onClick={expandList}>
+      <ContinentSelectButton onClick={switchListState}>
         <Text>
           {selectedContinent ? selectedContinent : "Filter by Region"}
         </Text>
         <StyledSelectIcon />
       </ContinentSelectButton>
-      {isListVisible ? (
+      {isListVisible && (
         <ContinentsList>
           <ListElement>
             <ListElementButton
@@ -79,8 +83,6 @@ const ContinentsButton = () => {
             </ListElementButton>
           </ListElement>
         </ContinentsList>
-      ) : (
-        ""
       )}
     </>
   );

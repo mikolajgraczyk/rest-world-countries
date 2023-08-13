@@ -11,7 +11,6 @@ import {
 } from "./styled";
 
 const CountryPageContent = ({ selectedCountryData }) => {
-  console.log(selectedCountryData);
 
   return (
     <StyledCountryPageContent>
