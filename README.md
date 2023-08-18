@@ -6,6 +6,8 @@ The "World Countries" project is an interactive website that displays an array o
 ## Demo
 https://mikolajgraczyk.github.io/rest-world-countries/#/countries
 
+![example](https://github.com/mikolajgraczyk/rest-world-countries/blob/main/public/Demo.gif?raw=true)
+
 ## Technologies used in project
 - HTML
 - CSS
